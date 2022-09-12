@@ -17,6 +17,8 @@ Consiste em uma Web API MVC e Web Application
  [MySQL]
 	create database apiwk;
 	
+	Alterar o connectionDatabase conforme seu Uid e Pwd do banco no appsettings.json da Web API MVC
+	
 	Os objetos do banco serão gerados via migration:
 	Ao executar o projeto de API, por favor, rodar o comando para iniciazar o banco:
 	dotnet ef database update
