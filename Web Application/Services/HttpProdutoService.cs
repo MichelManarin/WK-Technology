@@ -4,16 +4,24 @@ using System.Threading.Tasks;
 using Web_Application.Models;
 using System.Net.Http;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Options;
+using Web_Application.Settings;
 
 namespace Web_Application.Services
 {
     public class HttpProdutoService : IHttpProdutoService
     {
+        private ApiProdutoSettings _apiProdutoSettings;
+        public HttpProdutoService(IOptions<ApiProdutoSettings> config)
+        {
+            _apiProdutoSettings = config.Value;
+        }
+
         public async Task<List<CategoriaViewModel>> GetAllCategorias()
         {
             HttpClient httpClient = new HttpClient();
 
-            var response = await httpClient.GetAsync($"http://localhost:5005/categoria/list");
+            var response = await httpClient.GetAsync($"{_apiProdutoSettings.Url}categoria/list");
             
             var value = await response.Content.ReadAsStringAsync();
 
@@ -29,7 +37,7 @@ namespace Web_Application.Services
         {
             HttpClient httpClient = new HttpClient();
 
-            var response = await httpClient.GetAsync($"http://localhost:5005/produto/list");
+            var response = await httpClient.GetAsync($"{_apiProdutoSettings.Url}produto/list");
             
             var value = await response.Content.ReadAsStringAsync();
 
@@ -47,7 +55,7 @@ namespace Web_Application.Services
 
             var request = new HttpRequestMessage {
                 Method = HttpMethod.Post,
-                RequestUri = new Uri("http://localhost:5005/produto/create"),
+                RequestUri = new Uri($"{_apiProdutoSettings.Url}produto/create"),
                 Content = new StringContent(JsonConvert.SerializeObject(produto), null, "application/json")
             };
 
@@ -68,7 +76,7 @@ namespace Web_Application.Services
 
             var request = new HttpRequestMessage {
                 Method = HttpMethod.Put,
-                RequestUri = new Uri("http://localhost:5005/produto/update"),
+                RequestUri = new Uri($"{_apiProdutoSettings.Url}produto/update"),
                 Content = new StringContent(JsonConvert.SerializeObject(produto), null, "application/json")
             };
 
@@ -90,7 +98,7 @@ namespace Web_Application.Services
 
             var request = new HttpRequestMessage {
                 Method = HttpMethod.Post,
-                RequestUri = new Uri("http://localhost:5005/categoria/create"),
+                RequestUri = new Uri($"{_apiProdutoSettings.Url}categoria/create"),
                 Content = new StringContent(JsonConvert.SerializeObject(categoria), null, "application/json")
             };
 
@@ -110,7 +118,7 @@ namespace Web_Application.Services
         {
             HttpClient httpClient = new HttpClient();
 
-            var response = await httpClient.DeleteAsync($"http://localhost:5005/categoria/delete/{categoriaId}");
+            var response = await httpClient.DeleteAsync($"{_apiProdutoSettings.Url}categoria/delete/{categoriaId}");
 
             var value = await response.Content.ReadAsStringAsync();
 
@@ -122,7 +130,7 @@ namespace Web_Application.Services
         {
             HttpClient httpClient = new HttpClient();
 
-            var response = await httpClient.DeleteAsync($"http://localhost:5005/produto/delete/{produtoId}");
+            var response = await httpClient.DeleteAsync($"{_apiProdutoSettings.Url}produto/delete/{produtoId}");
 
             var value = await response.Content.ReadAsStringAsync();
 
@@ -138,7 +146,7 @@ namespace Web_Application.Services
         {
             HttpClient httpClient = new HttpClient();
 
-            var response = await httpClient.GetAsync($"http://localhost:5005/produto/{id}");
+            var response = await httpClient.GetAsync($"{_apiProdutoSettings.Url}produto/{id}");
             
             var value = await response.Content.ReadAsStringAsync();
 

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Web_Application.Services;
+using Web_Application.Settings;
 
 namespace Web_Application
 {
@@ -25,6 +26,9 @@ namespace Web_Application
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.Configure<ApiProdutoSettings>(Configuration.GetSection("ApiProdutoSettings"));
+
             services.AddScoped<IHttpProdutoService, HttpProdutoService>();
         }
 
