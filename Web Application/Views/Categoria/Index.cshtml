@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "P&C WK";
+}
+
+<div class="header-content">
+    <div class="container mt-1">
+        <div class="row d-flex">
+            <div class="col-12 col-md-6">
+                <h2 class="text-white">Consulta de categoria</h2>
+                <h6>Gerencie as categorias de produto</h6>
+            </div>
+
+            <div class="col-12 col-md-6 align-self-center">
+                <a asp-area="" asp-controller="Categoria" asp-action="Create" class="btn btn-primary button-header float-right">Adicionar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box-filter box-shadow">
+
+        <table class="table table-borderless table-hover table-striped">
+
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @if (Model != null)
+            {
+                foreach (var categoria in Model)
+                {
+                    <tr>
+                        <th scope="row">@(categoria.Id)</th>
+                        <td>@(categoria.Nome)</td>
+                        <td>
+                            <form>
+                                <a asp-action="Delete" asp-controller="Categoria" method="post" asp-route-id="@categoria.Id"><i class="material-icons">&#xE872;</i></a>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+        </table>
+    </div>
+</div>
+

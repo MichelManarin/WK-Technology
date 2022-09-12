@@ -1,0 +1,165 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+body{
+  font-family: roboto!important;
+  background-color: #f9f9f9;
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #898989;
+}
+
+.label-form{
+  color: #6e6e6e;
+}
+
+.btn-form{
+  min-width: 150px;
+  padding: 0.6rem 0;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  outline: 0;
+  transition: .2s;
+}
+
+.separador{
+  border-bottom: 1px dashed #e6e6f0;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #162a4b;
+  border-color: #17294a;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #c5c5c5;
+  border-color: #afafaf;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.button-header{
+  background: none;
+  border-color: #ffffff;
+}
+
+.button-header:hover{
+  background-color: #fff;
+  border-color: #ffffff;
+  color: #000000;
+
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .75rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.container-page{
+
+}
+
+table{
+  color: rgb(0 0 0 / 50%)!important;
+}
+
+tr:hover{
+  cursor: pointer;
+}
+
+.box-filter{
+  background: #fff;
+  width: 100%;
+  border-radius: 0.8rem;
+  margin: -3.2rem auto 3.2rem;
+  padding: 2rem;
+}
+
+.header-content{
+  margin: 0 auto;
+  flex: 1 1;
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #013f6f;
+  background: linear-gradient(90deg, #013f6f 0%, #182848 100%);
+  border-radius: 100% 0% 100% 0% / 0% 92% 8% 100%;
+  color: #fff;
+  font-family: roboto!important;
+  font-weight: 100!important;
+  margin: 1;
+  min-height: 170px;
+}
+
+.header-content h2{
+  font-weight: 100!important;
+  margin: 0;
+}
+
+.header-content h6{
+  font-weight: 300!important;
+  margin: 0.25rem;
+  color: rgb(255 255 255 / 27%);
+}
+
+.form-control {
+  border-radius: 0.33rem!important;
+  box-shadow: none!important;
+  border-color: #dddddd!important;
+ }

@@ -1,0 +1,83 @@
+﻿@model Web_Application.Models.ProdutoViewModel
+
+@{
+    ViewData["Title"] = "P&C WK";
+}
+
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function(event) { 
+
+        $("#Preco").maskMoney({
+            prefix: "",
+            decimal: ",",
+            thousands: "."
+        }).maskMoney('mask');
+
+    });
+
+</script>
+
+<div class="header-content">
+    <div class="container mt-1">
+        <div class="row d-flex">
+            <div class="col-12">
+                <h2 class="text-white">Edição de produto</h2>
+                <h6>Edite o produto</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box-filter box-shadow">
+            @using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+            {
+                <form class="form">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2 label-form" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
+                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2 label-form" })
+                        <div class="col-md-12">
+                            @Html.TextAreaFor(model => model.Descricao, 3, 40, htmlAttributes: new { @class = "form-control form-control-lg" })
+                            @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group separador pb-4">
+
+                        <div class="row m-0">
+                            
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                @Html.LabelFor(model => model.Preco, htmlAttributes: new { @class = "control-label label-form" })
+                                @Html.EditorFor(model => model.Preco, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
+                                @Html.ValidationMessageFor(model => model.Preco, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="col-sm-6 col-md-8 col-lg-9">
+                                @Html.LabelFor(model => model.CategoriaId, htmlAttributes: new { @class = "control-label label-form" })
+                                @Html.DropDownListFor(model => model.CategoriaId, (SelectList)ViewBag.ListaCategorias, "Selecione uma categoria", new { @class = "form-control form-control-lg label-form" })
+                                @Html.ValidationMessageFor(model => model.CategoriaId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Salvar" class="btn btn-primary btn-form mr-2" />
+                            <input type="submit" value="Cancelar" class="btn btn-secondary btn-form" asp-controller="Home" asp-action="Index"/>
+                        </div>
+                    </div>
+                </form>
+            }
+    </div>
+</div>
+
+
