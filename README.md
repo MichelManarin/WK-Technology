@@ -15,6 +15,7 @@ Consiste em uma Web API MVC e Web Application
 	Install-Package Newtonsoft.Json -Version 11.0.0
   
  [MySQL]
+	
 	create database apiwk;
 	
 	Alterar o connectionDatabase conforme seu Uid e Pwd do banco no appsettings.json da Web API MVC
