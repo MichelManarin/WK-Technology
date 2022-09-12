@@ -1,6 +1,11 @@
 # Michel Manarin - Teste Técnico - WK Technology 
 
+[Projeto]
+
+Consiste em uma Web API MVC e Web Application
+
 [UX]
+
 ![appTask](https://user-images.githubusercontent.com/6588753/189559453-ce19efea-60e9-4e5e-a406-73c4e8d02c26.png)
 
 [Comandos Utilizados]
@@ -12,7 +17,10 @@
 	Install-Package Newtonsoft.Json -Version 11.0.0
   
  [MySQL]
+	
 	create database apiwk;
+	
+	Alterar o connectionDatabase conforme seu Uid e Pwd do banco no appsettings.json da Web API MVC
 	
 	Os objetos do banco serão gerados via migration:
 	Ao executar o projeto de API, por favor, rodar o comando para iniciazar o banco:
@@ -22,6 +30,7 @@
 	dotnet run
 	
 [Swagger]
+
 	Com o projeto aberto da API rodando, basta acessar 
 	http://localhost:5005/swagger/index.html
 	para ter acesso a documentação dos endpoints.
@@ -47,3 +56,10 @@
 	7. Injeção de Dependência – Swagger
 
 	8. UI/UX
+	
+[Pontos de melhoria]
+
+	Falta Paginação
+
+	Deixar no padrão rest...
+	
