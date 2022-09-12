@@ -19,8 +19,9 @@
 		dotnet run
 	
 [Swagger]
-	Com o projeto aberto, acessar 
+	Com o projeto aberto da API rodando, basta acessar 
 	http://localhost:5005/swagger/index.html
+	para ter acesso a documentação dos endpoints.
 	
 [Padrão de projeto utilizado]
 	
