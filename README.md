@@ -52,3 +52,9 @@ Consiste em uma Web API MVC e Web Application
 	7. Injeção de Dependência – Swagger
 
 	8. UI/UX
+	
+[Pontos de melhoria]
+	Fixei a porta da WEB API na http://localhost:5005 e deixei isso fixo no código, a ideia é passar dentro do appsettings.json
+	Falta Paginação
+	Deixar no padrão rest...
+	
