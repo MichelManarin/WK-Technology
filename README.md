@@ -12,11 +12,11 @@
 	create database apiwk;
 	
 	Os objetos do banco serão gerados via migration:
-		Ao executar o projeto de API, por favor, rodar o comando para iniciazar o banco:
-			dotnet ef database update
+	Ao executar o projeto de API, por favor, rodar o comando para iniciazar o banco:
+	dotnet ef database update
 	
 	Após isso para rodar tanto API como WEB Application com:
-		dotnet run
+	dotnet run
 	
 [Swagger]
 	Com o projeto aberto da API rodando, basta acessar 
