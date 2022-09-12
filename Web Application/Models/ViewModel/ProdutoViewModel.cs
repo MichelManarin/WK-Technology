@@ -21,7 +21,7 @@ namespace Web_Application.Models
         public CategoriaViewModel Categoria { get; set; }
 
         [Required(ErrorMessage = "Informe a categoria do produto")]
-        [Display(Name = "Descrição")]
+        [Display(Name = "Categoria")]
         public int CategoriaId { get; set; }
 
         [Required(ErrorMessage = "Informe o preço do produto")]
